@@ -1,0 +1,29 @@
+Android build issue fixer instructions
+===================================
+
+Gradle/JDK version issues are common with Android builds.
+The error you're experiencing is related to using JDK 21 (version 65)
+which isn't compatible with the Gradle version.
+
+To fix this:
+
+1. This project has been configured for Java 11, but you're using Java 21
+
+2. Add this to your local.properties file: 
+```
+org.gradle.java.home=C:\\Program Files\\Java\\jdk-11
+```
+(Or another path to a compatible JDK 11 installation)
+
+3. You may need to create/download Java 11 if you don't have it installed
+
+4. You can also build from command line:
+```
+# Set JAVA_HOME to point to Java 11
+set JAVA_HOME=C:\Program Files\Java\jdk-11
+cd android
+./gradlew clean
+./gradlew assembleDebug
+```
+
+5. The output APK will be in: android/app/build/outputs/apk/debug/app-debug.apk

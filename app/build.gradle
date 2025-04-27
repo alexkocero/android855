@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace "io.goalmanager.app"
+    compileSdk 33
+    ndkVersion "21.4.7075529"
+    defaultConfig {
+        applicationId "io.goalmanager.app"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [usesCleartextTraffic: "true"]
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.core:core-ktx:1.10.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation "com.google.android.material:material:1.9.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.7.10"
+    
+    // Capacitor kütüphaneleri
+    implementation 'com.getcapacitor:capacitor-android:5.0.5'
+    implementation 'com.getcapacitor:capacitor:5.0.5'
+    
+    // Capacitor plugins
+    implementation 'com.getcapacitor:app:5.0.6'
+    implementation 'com.getcapacitor:haptics:5.0.6'
+    implementation 'com.getcapacitor:keyboard:5.0.6'
+    implementation 'com.getcapacitor:status-bar:5.0.6'
+    implementation 'com.getcapacitor:splash-screen:5.0.6'
+    
+    // Google Play Services
+    implementation 'com.google.android.gms:play-services-core:18.2.0'
+    
+    // Splash screen kütüphanesi
+    implementation "androidx.core:core-splashscreen:1.0.1"
+    
+    // Google AdMob - reklam entegrasyonu
+    implementation "com.google.android.gms:play-services-ads:22.4.0"
+    
+    // Test
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+}

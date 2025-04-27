@@ -1,0 +1,26 @@
+{
+	"appId": "io.goalmanager.app",
+	"appName": "Goal Manager",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"server": {
+		"url": "https://app.goalmanager.io",
+		"cleartext": true,
+		"hostname": "app.goalmanager.io"
+	},
+	"android": {
+		"backgroundColor": "#141D2F",
+		"allowMixedContent": true,
+		"captureInput": true,
+		"androidScheme": "https"
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 2000,
+			"backgroundColor": "#141D2F",
+			"androidScaleType": "CENTER_CROP",
+			"showSpinner": true,
+			"spinnerColor": "#E8C44C"
+		}
+	}
+}

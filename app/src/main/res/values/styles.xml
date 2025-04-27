@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ana uygulama teması -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#141D2F</item>
+        <item name="colorPrimaryDark">#0C1320</item>
+        <item name="colorAccent">#E8C44C</item>
+        <item name="android:background">#141D2F</item>
+        <item name="android:windowBackground">#141D2F</item>
+        <item name="android:navigationBarColor">#141D2F</item>
+        <item name="android:statusBarColor">#141D2F</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!-- Splash ekran teması -->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#141D2F</item>
+        <item name="colorPrimaryDark">#0C1320</item>
+        <item name="colorAccent">#E8C44C</item>
+        <item name="android:windowBackground">#141D2F</item>
+        <item name="android:navigationBarColor">#141D2F</item>
+        <item name="android:statusBarColor">#141D2F</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>
